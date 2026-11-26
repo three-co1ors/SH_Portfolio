@@ -10,7 +10,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">📂 프로젝트 상세</td>
+<td style="text-align:left"><strong>프로젝트 상세</strong></td>
 <td style="text-align:left"><a href="https://github.com/three-co1ors/SH_Escapetato">README 및 구현 코드</a></td>
 </tr>
 </tbody>
@@ -34,19 +34,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">🎒 <strong>아이템 및 재화 관리 시스템</strong></td>
+<td style="text-align:left">01. <strong>아이템 및 재화 관리 시스템</strong></td>
 <td style="text-align:left"><span class="tech-tag">C#</span> <span class="tech-tag">Singleton</span> <br/> Singleton 기반 <code>InventoryManager</code>를 구성하여 아이템 추가·삭제·보유 수량을 관리했습니다. 작물 수확 및 진화 결과를 도감에 연결하고, 연구소와 상점에서 동일한 아이템·재화 관리 로직을 활용하도록 기능을 연동했습니다. 여러 게임 시스템에서 공통으로 사용되는 데이터를 일관된 방식으로 관리하도록 구성했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">🖥️ <strong>공통 UI 및 팝업 제어</strong></td>
+<td style="text-align:left">02. <strong>공통 UI 및 팝업 제어</strong></td>
 <td style="text-align:left"><span class="tech-tag">Unity</span> <span class="tech-tag">UIManager</span> <br/> 각 기능에서 팝업을 개별적으로 제어하면서 UI 간 충돌이 발생했습니다. 기존 팝업을 닫고 선택한 창만 열도록 <strong>공통 <code>UIManager</code>를 구성</strong>했습니다. 팀원들이 동일한 API를 사용하여 팝업을 제어할 수 있도록 사용 가이드도 작성했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">💾 <strong>비동기 데이터 저장 및 복원</strong></td>
+<td style="text-align:left">03. <strong>비동기 데이터 저장 및 복원</strong></td>
 <td style="text-align:left"><span class="tech-tag">Firebase Realtime Database</span> <span class="tech-tag">C#</span> <br/> 퀘스트 진행 데이터를 비동기로 저장하고 게임 재실행 시 기존 진행 상태를 복원하도록 구현했습니다. 비동기 데이터 로드가 끝나기 전에 저장이 실행되어 <strong>기존 퀘스트 데이터가 초기값으로 덮이는 문제</strong>가 발생했습니다. <code>isLoaded</code> Guard를 적용하여 데이터 로드가 완료되기 전에는 저장이 실행되지 않도록 수정했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">🔑 <strong>퀘스트 식별자 충돌 해결</strong></td>
+<td style="text-align:left">04. <strong>퀘스트 식별자 충돌 해결</strong></td>
 <td style="text-align:left"><span class="tech-tag">Firebase Realtime Database</span> <span class="tech-tag">C#</span> <br/> 메인 퀘스트와 일일 퀘스트에서 동일한 DB Key를 사용하면서 식별자가 충돌하는 문제가 발생했습니다. 퀘스트 유형별 <strong>식별자 네임스페이스를 분리</strong>하여 서로 다른 유형의 데이터가 충돌하지 않도록 해결했습니다.</td>
 </tr>
 </tbody>
@@ -55,4 +55,4 @@
 <p><strong>핵심 경험</strong></p>
 <p>여러 게임 기능에서 공통으로 사용하는 아이템·재화 관리 및 UI 제어 로직을 통합했습니다. 특히 <strong>비동기 데이터의 로드·저장 순서와 데이터 식별자 설계</strong>가 데이터 안정성에 미치는 영향을 경험했습니다. 공통 API와 사용 가이드를 구성하여 팀원 간 기능 통합 과정에서 발생하는 문제에도 대응했습니다.</p>
 </blockquote>
-</div></article><nav aria-label="프로젝트 이동" class="project-pagination"><a class="project-nav-link project-nav-prev" href="howsu.html"><span class="project-nav-arrow" aria-hidden="true">←</span><span class="project-nav-copy"><span class="project-nav-label">이전 프로젝트</span><span class="project-nav-name">Howsu</span></span></a><a class="project-nav-link project-nav-all" href="index.html#projects">전체 프로젝트</a><a class="project-nav-link project-nav-next" href="oheng.html"><span class="project-nav-copy"><span class="project-nav-label">다음 프로젝트</span><span class="project-nav-name">산딸기 어린이집</span></span><span class="project-nav-arrow" aria-hidden="true">→</span></a></nav></main><footer><div class="wrap foot"><div><strong>박성하</strong><p>Backend Development · AI Integration · Cloud Deployment</p></div><div><a href="https://github.com/three-co1ors" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://www.hivibe.cloud/" rel="noopener noreferrer" target="_blank">HiVibe ↗</a><a href="#main">맨 위로 ↑</a></div></div></footer><dialog aria-label="프로젝트 화면 확대" id="lightbox"><button aria-label="닫기" class="close" type="button">×</button><img alt="" hidden=""/><video controls="" hidden="" playsinline="" preload="none"></video><p></p></dialog></body></html>
+</div></article><nav aria-label="프로젝트 이동" class="project-pagination"><a class="project-nav-link project-nav-prev" href="howsu.html"><span aria-hidden="true" class="project-nav-arrow">←</span><span class="project-nav-copy"><span class="project-nav-label">이전 프로젝트</span><span class="project-nav-name">Howsu</span></span></a><a class="project-nav-link project-nav-all" href="index.html#projects">전체 프로젝트</a><a class="project-nav-link project-nav-next" href="oheng.html"><span class="project-nav-copy"><span class="project-nav-label">다음 프로젝트</span><span class="project-nav-name">산딸기 어린이집</span></span><span aria-hidden="true" class="project-nav-arrow">→</span></a></nav></main><footer><div class="wrap foot"><div><strong>박성하</strong><p>Backend Development · AI Integration · Cloud Deployment</p></div><div><a href="https://github.com/three-co1ors" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://www.hivibe.cloud/" rel="noopener noreferrer" target="_blank">HiVibe ↗</a><a href="#main">맨 위로 ↑</a></div></div></footer><dialog aria-label="프로젝트 화면 확대" id="lightbox"><button aria-label="닫기" class="close" type="button">×</button><img alt="" hidden=""/><video controls="" hidden="" playsinline="" preload="none"></video><p></p></dialog></body></html>

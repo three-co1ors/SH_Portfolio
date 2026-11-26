@@ -10,11 +10,11 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">📂 프로젝트 상세</td>
+<td style="text-align:left"><strong>프로젝트 상세</strong></td>
 <td style="text-align:left"><a href="https://github.com/three-co1ors/SH_HOWSU">README 및 구현 코드</a></td>
 </tr>
 <tr>
-<td style="text-align:left">👥 팀 저장소</td>
+<td style="text-align:left"><strong>팀 저장소</strong></td>
 <td style="text-align:left"><a href="https://github.com/H0WSU/dev">GitHub Repository</a></td>
 </tr>
 </tbody>
@@ -38,31 +38,31 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">🔐 <strong>외부 OAuth 인증 연동</strong></td>
+<td style="text-align:left">01. <strong>외부 OAuth 인증 연동</strong></td>
 <td style="text-align:left"><span class="tech-tag">Kakao/Naver OAuth</span> <span class="tech-tag">Cloud Functions</span> <span class="tech-tag">Firebase Auth</span> <br/> 외부 OAuth 토큰을 Firebase Auth에 바로 사용할 수 없어 별도의 인증 연동 구조를 구성했습니다. <strong>앱에서 OAuth 토큰 획득 → Cloud Functions에서 유효성 검증 → Firebase Custom Token 발급 → 앱 로그인</strong> 순으로 인증 흐름을 구현했습니다. <br/><br/> ※ Kakao/Naver 로그인은 플랫폼 심사 미승인으로 최종 배포에서 제외했으며, Google 및 이메일 로그인을 제공했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">👥 <strong>가족 그룹 연결 및 데이터 정합성</strong></td>
+<td style="text-align:left">02. <strong>가족 그룹 연결 및 데이터 정합성</strong></td>
 <td style="text-align:left"><span class="tech-tag">Firestore</span> <span class="tech-tag">Batch Write</span> <span class="tech-tag">ZXing</span> <br/> QR 코드와 고유 ID를 활용해 가족 그룹에 참여할 수 있도록 구현했습니다. 가입·탈퇴 과정에서 사용자 문서와 가족 그룹 문서 등 여러 Firestore 문서가 일부만 변경되지 않도록 <strong>관련 쓰기 작업을 Batch Write로 묶어 원자적으로 처리</strong>했습니다. Firebase Auth 계정 삭제는 Firestore Batch의 원자성 범위 밖이라는 점도 구분했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">📅 <strong>Todo 및 반복 일정 관리</strong></td>
+<td style="text-align:left">03. <strong>Todo 및 반복 일정 관리</strong></td>
 <td style="text-align:left"><span class="tech-tag">Kotlin</span> <span class="tech-tag">Firestore</span> <span class="tech-tag">Batch Delete</span> <br/> 반려동물별·담당자별 할 일을 등록하고 완료 상태를 관리하며, 미완료 항목을 다음 날로 자동 이월하도록 구현했습니다. 반복 일정 삭제에서는 <strong>'이번 일정만'과 '이후 일정 전체'</strong>를 분기하고, 반복 규칙과 날짜 조건으로 삭제 대상을 결정한 뒤 Batch Delete로 일괄 처리했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">🔔 <strong>이벤트 기반 담당자 푸시 알림</strong></td>
+<td style="text-align:left">04. <strong>이벤트 기반 담당자 푸시 알림</strong></td>
 <td style="text-align:left"><span class="tech-tag">Cloud Functions</span> <span class="tech-tag">Firestore</span> <span class="tech-tag">FCM</span> <br/> 새로운 Todo가 등록되면 해당 담당자에게 알림이 전달되도록 <strong>Todo 생성 → Firestore 이벤트 기반 Cloud Functions 실행 → 담당자 FCM 토큰으로 전송</strong>하는 흐름을 구성했습니다. 데이터 생성 이벤트와 서버 측 알림 처리를 연결했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">⏰ <strong>로컬 일정 알림 및 사용자 설정</strong></td>
+<td style="text-align:left">05. <strong>로컬 일정 알림 및 사용자 설정</strong></td>
 <td style="text-align:left"><span class="tech-tag">AlarmManager</span> <span class="tech-tag">DataStore</span> <br/> 일정 미리 알림은 <code>AlarmManager</code>를 활용하여 로컬에서 예약했습니다. 알림 수신 시 <code>DataStore</code>에 저장된 사용자 알림 설정을 확인하도록 구현했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">🔍 <strong>서버 오류 추적 및 재배포</strong></td>
+<td style="text-align:left">06. <strong>서버 오류 추적 및 재배포</strong></td>
 <td style="text-align:left"><span class="tech-tag">Cloud Functions</span> <span class="tech-tag">Functions Log</span> <span class="tech-tag">FCM</span> <br/> Cloud Functions 배포 후 Todo가 정상적으로 생성되었음에도 담당자에게 FCM 알림이 전달되지 않는 문제가 발생했습니다. 서버 로그를 추적하여 <strong>Firestore 인스턴스 선언 누락</strong>을 확인하고, 관련 코드를 수정한 뒤 재배포하여 해결했습니다.</td>
 </tr>
 <tr>
-<td style="text-align:left">🔄 <strong>화면 상태 관리 및 데이터 갱신</strong></td>
+<td style="text-align:left">07. <strong>화면 상태 관리 및 데이터 갱신</strong></td>
 <td style="text-align:left"><span class="tech-tag">ViewModel</span> <span class="tech-tag">SavedStateHandle</span> <span class="tech-tag">Navigation</span> <br/> 일정 수정·삭제 후 이전 화면으로 돌아왔을 때 기존 목록이 그대로 유지되는 문제가 발생했습니다. <code>SavedStateHandle</code>을 활용하여 화면 간 새로고침 신호를 전달하고 변경된 데이터가 반영되도록 화면 갱신 흐름을 수정했습니다.</td>
 </tr>
 </tbody>
@@ -71,4 +71,4 @@
 <p><strong>핵심 경험</strong></p>
 <p>여러 사용자가 동일한 데이터를 변경하는 환경에서 <strong>문서 간 데이터 정합성과 원자적 변경</strong>을 고려했습니다. 외부 인증 서비스와 Firebase를 연동하고, 데이터 생성 이벤트부터 서버 실행 및 알림 수신까지 이어지는 전체 흐름을 구현했습니다. 서버 로그를 활용하여 기능 간 연결 과정에서 발생하는 장애 지점을 추적하고 해결했습니다.</p>
 </blockquote>
-</div></article><nav aria-label="프로젝트 이동" class="project-pagination"><a class="project-nav-link project-nav-prev" href="hivibe.html"><span class="project-nav-arrow" aria-hidden="true">←</span><span class="project-nav-copy"><span class="project-nav-label">이전 프로젝트</span><span class="project-nav-name">HiVibe</span></span></a><a class="project-nav-link project-nav-all" href="index.html#projects">전체 프로젝트</a><a class="project-nav-link project-nav-next" href="farm.html"><span class="project-nav-copy"><span class="project-nav-label">다음 프로젝트</span><span class="project-nav-name">왓더팜</span></span><span class="project-nav-arrow" aria-hidden="true">→</span></a></nav></main><footer><div class="wrap foot"><div><strong>박성하</strong><p>Backend Development · AI Integration · Cloud Deployment</p></div><div><a href="https://github.com/three-co1ors" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://www.hivibe.cloud/" rel="noopener noreferrer" target="_blank">HiVibe ↗</a><a href="#main">맨 위로 ↑</a></div></div></footer><dialog aria-label="프로젝트 화면 확대" id="lightbox"><button aria-label="닫기" class="close" type="button">×</button><img alt="" hidden=""/><video controls="" hidden="" playsinline="" preload="none"></video><p></p></dialog></body></html>
+</div></article><nav aria-label="프로젝트 이동" class="project-pagination"><a class="project-nav-link project-nav-prev" href="hivibe.html"><span aria-hidden="true" class="project-nav-arrow">←</span><span class="project-nav-copy"><span class="project-nav-label">이전 프로젝트</span><span class="project-nav-name">HiVibe</span></span></a><a class="project-nav-link project-nav-all" href="index.html#projects">전체 프로젝트</a><a class="project-nav-link project-nav-next" href="farm.html"><span class="project-nav-copy"><span class="project-nav-label">다음 프로젝트</span><span class="project-nav-name">왓더팜</span></span><span aria-hidden="true" class="project-nav-arrow">→</span></a></nav></main><footer><div class="wrap foot"><div><strong>박성하</strong><p>Backend Development · AI Integration · Cloud Deployment</p></div><div><a href="https://github.com/three-co1ors" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://www.hivibe.cloud/" rel="noopener noreferrer" target="_blank">HiVibe ↗</a><a href="#main">맨 위로 ↑</a></div></div></footer><dialog aria-label="프로젝트 화면 확대" id="lightbox"><button aria-label="닫기" class="close" type="button">×</button><img alt="" hidden=""/><video controls="" hidden="" playsinline="" preload="none"></video><p></p></dialog></body></html>
